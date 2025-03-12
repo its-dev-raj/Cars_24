@@ -17,8 +17,8 @@ const Car_overview = () => {
   const [updown, setUpDown] = useState(true);
 
   return (
-    <div className="flex   gap-4 px-6  py-6  flex-col w-[650px] shadow-xl  rounded-2xl h-auto">
-      <div className="flex justify-between">
+    <div className="flex gap-3  lg:gap-4 px-2 lg:px-6  py-6  flex-col lg:w-[650px] shadow-xl  rounded-2xl h-auto">
+      <div className="flex px-4 lg:px-0 justify-between">
         <p className="text-xl font-semibold"> Car overview</p>
         <ChevronDown
           className={`bg-gray-200 rounded-full p-1 transition-transform duration-300 ${
@@ -29,128 +29,158 @@ const Car_overview = () => {
         {/* <ChevronUp /> */}
       </div>
       {updown ? (
-        <div className="flex justify-between w-[650px] gap-12  overflow-hidden">
-          <div className="flex flex-col w-[600px]">
-            <div className="flex justify-between h-18 border-b  border-gray-300  w-[600px] overflow-hidden ">
+        <div className="flex justify-between lg:w-[650px]   overflow-hidden">
+          <div className="flex flex-col lg:w-[600px]">
+            <div className="flex justify-between h-18 border-b   border-gray-300  lg:w-[600px] overflow-hidden ">
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={regyear} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={regyear}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Reg. year</p>
-                  <p className="text-lg font-semibold">Feb 2015</p>
+                  <p className="lg:text-lg text-sm font-semibold">Feb 2015</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={fuel} alt="" />
+                  <img className={`size-6 lg:flex hidden`} src={fuel} alt="" />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Fule</p>
-                  <p className="text-lg font-semibold">Petrol</p>
+                  <p className="lg:text-lg text-sm font-semibold">Petrol</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={odometer} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={odometer}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">KM driven</p>
-                  <p className="text-lg font-semibold">98,092 km</p>
+                  <p className="lg:text-lg text-sm font-semibold">98,092 km</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-between h-18  border-b  border-gray-300  w-[600px] overflow-hidden ">
+            <div className="flex justify-between h-18  border-b  border-gray-300  lg:w-[600px] overflow-hidden ">
               <div className="flex items-center  gap-4">
                 <div>
-                  <img className="size-6" src={odometer1} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={odometer1}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Transmission</p>
-                  <p className="text-lg font-semibold">Manual</p>
+                  <p className="lg:text-lg text-sm font-semibold">Manual</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={engine} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={engine}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Engine capacity</p>
-                  <p className="text-lg font-semibold">1497cc</p>
+                  <p className="lg:text-lg text-sm font-semibold">1497cc</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={ownership} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={ownership}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Ownership</p>
-                  <p className="text-lg font-semibold">2nd</p>
+                  <p className="lg:text-lg text-sm font-semibold">2nd</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-between h-18  border-b border-gray-300 w-[600px] overflow-hidden ">
+            <div className="flex justify-between h-18  border-b border-gray-300 lg:w-[600px] overflow-hidden ">
               <div className="flex items-center  gap-4">
                 <div>
-                  <img className="size-6" src={make} alt="" />
+                  <img className={`size-6 lg:flex hidden`} src={make} alt="" />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Make year</p>
-                  <p className="text-lg font-semibold">Jan 2015</p>
+                  <p className="lg:text-lg text-sm font-semibold">Jan 2015</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div>
-                  <img className="size-6" src={key} alt="" />
+                  <img className={`size-6 lg:flex hidden`} src={key} alt="" />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Spare key</p>
-                  <p className="text-lg font-semibold">No</p>
+                  <p className="lg:text-lg text-sm font-semibold">No</p>
                 </div>
               </div>
               <div className="flex items-center  gap-4">
                 <div>
-                  <img className="size-6" src={rto} alt="" />
+                  <img className={`size-6 lg:flex hidden`} src={rto} alt="" />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">Reg number</p>
-                  <p className="text-lg font-semibold">KA04**6437</p>
+                  <p className="lg:text-lg text-sm font-semibold">KA04**6437</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex gap-22 h-18  w-[600px] overflow-hidden ">
+            <div className="flex lg:gap-22 h-18  lg:w-[600px] overflow-hidden ">
               <div className="flex items-center  gap-4">
                 <div>
-                  <img className="size-6" src={insurance1} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={insurance1}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <div className="flex gap-2 items-center">
                     <p className="text-[#B0B0B0] text-xs">Insurance</p>
-                    <BadgeInfo className="size-4 bg-gray-500 text-white rounded-full " />
+                    <BadgeInfo className="lg:size-4 size-3 bg-gray-500 text-white rounded-full " />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold">Need renewal</p>
+                    <p className="lg:text-lg text-sm font-semibold">
+                      Need renewal
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="flex items-center  gap-4">
                 <div>
-                  <img className="size-6" src={insurance} alt="" />
+                  <img
+                    className={`size-6 lg:flex hidden`}
+                    src={insurance}
+                    alt=""
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">insurance</p>
-                  <p className="text-lg font-medium">Plans from</p>
-                  <p className="text-lg font-medium">₹3,796/y</p>
+                  <p className="lg:text-lg text-sm font-medium">Plans from</p>
+                  <p className="lg:text-lg text-sm font-medium">₹3,796/y</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className="text-[#B0B0B0]">
+        <div className="text-[#B0B0B0] lg:text-lg text-sm">
           View car details like registration number, ownership, model year,
           insurance, fuel type, and more.
         </div>

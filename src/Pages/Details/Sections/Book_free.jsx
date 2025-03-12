@@ -4,30 +4,30 @@ import direct from "/public/image/direct.png";
 import checklist from "/public/image/checklist.png";
 const Book_free = () => {
   return (
-    <div className="flex gap-4 bg-white rounded-2xl shadow flex-col w-[500px] h-[620px]">
-      <div className="flex flex-col gap-2 px-6 py-8">
+    <div className="flex gap-4 bg-white rounded-2xl shadow flex-col    lg:w-[500px] lg:h-[620px]">
+      <div className="flex flex-col gap-2 px-3 lg:px-6 py-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-1">
-            <p className="text-2xl font-semibold">2015 Honda City</p>
-            <p className="text-3xl">1.5L I-VTEC V</p>
+            <p className="lg:text-2xl text-xl font-semibold">2015 Honda City</p>
+            <p className="lg:text-3xl text-xl">1.5L I-VTEC V</p>
           </div>
           <Heart />
         </div>
         <p className="text-2xl font-semibold">MT</p>
-        <div className="flex items-center text-[#717272]  gap-2 w-full ">
-          <p className="py-1 rounded-sm px-2 bg-[#F5F5F5] font-semibold  text-sm">
+        <div className="flex items-center text-[#717272] gap-2 w-full ">
+          <p className="py-1 rounded-sm px-1 lg:px-2 bg-[#F5F5F5] font-semibold text-xs lg:text-sm">
             98,092 km
           </p>
-          <p className="py-1 rounded-sm px-2 bg-[#F5F5F5]  font-semibold text-sm">
+          <p className="py-1 rounded-sm px-1 lg:px-2 bg-[#F5F5F5]  font-semibold text-xs lg:text-sm">
             2nd owner
           </p>
-          <p className="py-1 rounded-sm px-2 bg-[#F5F5F5]  font-semibold text-sm">
+          <p className="py-1 rounded-sm px-1 lg:px-2 bg-[#F5F5F5]  font-semibold text-xs lg:text-sm">
             Manual
           </p>
-          <p className="py-1 rounded-sm px-2 bg-[#F5F5F5]  font-semibold text-sm">
+          <p className="py-1 rounded-sm px-1 lg:px-2 bg-[#F5F5F5]  font-semibold text-xs lg:text-sm">
             Petrol
           </p>
-          <p className="py-1 rounded-sm px-2 bg-[#F5F5F5]  font-semibold text-sm">
+          <p className="py-1 rounded-sm px-1 lg:px-2 bg-[#F5F5F5]  font-semibold text-xs lg:text-sm">
             KA-04
           </p>
         </div>

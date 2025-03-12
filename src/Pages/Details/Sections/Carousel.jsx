@@ -129,8 +129,8 @@ const Carousel = () => {
     { img: five_zero },
   ];
   return (
-    <div>
-      <div className="flex relative flex-col overflow-hidden w-[650px]  rounded-2xl h-[450px]">
+    <div className="">
+      <div className="flex select-none  relative flex-col overflow-hidden lg:w-[650px]  rounded-2xl lg:h-[450px]">
         <Swiper
           cssMode={true}
           mousewheel={true}

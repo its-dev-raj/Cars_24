@@ -7,6 +7,7 @@ import { ChevronDown, MapPin } from "lucide-react";
 const carsData = [
   {
     id: 1,
+    img: RightFront,
     name: "2016 Maruti Swift Dzire",
     model: "VXI",
     kmDriven: "50.27k km",
@@ -19,6 +20,7 @@ const carsData = [
   },
   {
     id: 2,
+    img: RightFront,
     name: "2020 Hyundai i20",
     model: "Asta",
     kmDriven: "35.5k km",
@@ -31,6 +33,7 @@ const carsData = [
   },
   {
     id: 3,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -42,7 +45,8 @@ const carsData = [
     location: "Indiranagar, Bangalore",
   },
   {
-    id: 3,
+    id: 4,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -54,7 +58,8 @@ const carsData = [
     location: "Indiranagar, Bangalore",
   },
   {
-    id: 3,
+    id: 5,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -66,7 +71,8 @@ const carsData = [
     location: "Indiranagar, Bangalore",
   },
   {
-    id: 3,
+    id: 6,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -78,7 +84,8 @@ const carsData = [
     location: "Indiranagar, Bangalore",
   },
   {
-    id: 3,
+    id: 7,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -90,7 +97,8 @@ const carsData = [
     location: "Indiranagar, Bangalore",
   },
   {
-    id: 3,
+    id: 8,
+    img: RightFront,
     name: "2018 Honda City",
     model: "VX",
     kmDriven: "42.1k km",
@@ -106,9 +114,9 @@ const carsData = [
 const Card_Cars = ({ car }) => {
   console.log(car);
   return (
-    <div className="w-[300px] cursor-pointer h-[325px] shadow border overflow-hidden border-gray-50 rounded-xl">
-      <div className="bg-linear-to-b from-[#D9E0E4] to-white rounded-t-xl px-12">
-        <img src={RightFront} alt="" />
+    <div className=" w-[320px] lg:w-[300px] cursor-pointer h-[325px] shadow border overflow-hidden border-gray-300 rounded-xl">
+      <div className="bg-linear-to-b from-[#D9E0E4] to-white rounded-t-xl lg:px-12">
+        <img src={car.img} alt="" />
       </div>
       <div className="flex flex-col gap-1 px-3">
         <div className="flex items-center gap-1">
@@ -159,7 +167,7 @@ const Card_Cars = ({ car }) => {
 
 const CarList = () => {
   return (
-    <div className="flex flex-wrap gap-4 ">
+    <div className="flex items-center  lg:flex-row flex-col lg:flex-wrap gap-4 ">
       {carsData.map((car) => (
         <Card_Cars key={car.id} car={car} />
       ))}

@@ -1,15 +1,19 @@
 import React from "react";
-import Hondacity from "./component_02/Hondacity";
-import Home from "./component_01/Home";
+import Hondacity from "./Pages/Details/Hondacity";
 import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Footer from "./component_01/Footer";
+import Navbar from "./component_01/Navbar";
 
 const App = () => {
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<Hondacity />}/>
+        <Route path="/detail" element={<Hondacity />} />
       </Routes>
+      <Footer />
     </>
   );
 };

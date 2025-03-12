@@ -8,18 +8,24 @@ import shield from "/public/image/insurance.png";
 
 const Car_inspection = () => {
   return (
-    <div className="flex gap-4 px-6 bg-[#FFFFFF] py-6  flex-col w-[650px] shadow-xl   rounded-2xl h-[400px]">
+    <div className="flex gap-4 lg:px-6 px-2 bg-[#FFFFFF] py-6  flex-col lg:w-[650px] shadow-xl   rounded-2xl lg:h-[400px]">
       <div>
-        <p className="text-xl font-semibold">Car inspection report</p>
+        <p className="lg:text-xl text-lg font-semibold">
+          Car inspection report
+        </p>
       </div>
       <div className="flex justify-between items-center pt-2  gap-4">
         <div className="flex flex-col gap-3 items-center">
-          <img className="size-8" src={car} alt="" />
+          <img className="size-8  object-cover" src={car} alt="" />
           <p className="text-xs font-semibold">No accident history</p>
         </div>
         <div className="flex flex-col gap-3 items-center">
           <div className="flex flex-col gap-2 items-center">
-            <img className="size-9" src={speedometer} alt="" />
+            <img
+              className="lg:size-9 size-8 object-cover"
+              src={speedometer}
+              alt=""
+            />
             <p className="text-xs font-semibold">No odometer tampering</p>
           </div>
         </div>
@@ -35,14 +41,16 @@ const Car_inspection = () => {
       <div>
         <img src={report} alt="" />
       </div>
-      <div className="flex justify-between">
-        <div className="flex items-center gap-1">
-          <img className="size-6  " src={shield} alt="" />
+      <div className="flex lg:flex-row lg:gap-0 gap-4  flex-col justify-between">
+        <div className="flex items-center gap-2 lg:gap-1">
+          <img className="lg:size-6  size-4" src={shield} alt="" />
           <p className="text-sm font-bold">CARS24 </p>
-          <p className="text-[#717276] ">inspected with 140-quality checks.</p>
+          <p className="text-[#717276] text-sm lg:text-sm">
+            inspected with 140-quality checks.
+          </p>
         </div>
         <div className="bg-[#EF6E0B] p-2 px-8 rounded-lg">
-          <p className="text-white font-semibold text-lg">
+          <p className="text-white font-semibold text-center text-sm lg:text-lg">
             View inspection report
           </p>
         </div>
