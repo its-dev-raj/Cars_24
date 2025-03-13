@@ -136,8 +136,8 @@ const Makemodel = () => {
                     }  py-4  pl-4 flex-col gap-2`}
                   >
                     {brand.models?.map(({ modelName, count, checked }, id) => (
-                      <div className="flex ">
-                        <div className="flex items-center justify-center gap-4">
+                      <div className="flex items-center select-none justify-between gap-4">
+                        <div className="flex gap-2">
                           <input
                             type="checkbox"
                             onChange={(e) => {

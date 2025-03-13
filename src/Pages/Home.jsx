@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../component_01/Navbar";
 import { Link } from "react-router-dom";
 import Card_Cars from "./Home/Sections/CarSection/Card_Cars";
 import Sidebar from "./Home/Sections/Sidebar/Sidebar";
