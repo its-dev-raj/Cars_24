@@ -1,5 +1,6 @@
 import React from "react";
 import RightFront from "/public/Home_image/2-Right-Front-Diagonal (1).jpg";
+import RightFront2 from "/public/Home_image/2-Right-Front-Diagonal (2).jpg"
 import checklist from "/public/image/checklist.png";
 import autonaut from "/public/Home_image/autonaut.8a723bda.jpg";
 import { ChevronDown, MapPin } from "lucide-react";
@@ -20,7 +21,7 @@ const carsData = [
   },
   {
     id: 2,
-    img: RightFront,
+    img: RightFront2,
     name: "2020 Hyundai i20",
     model: "Asta",
     kmDriven: "35.5k km",

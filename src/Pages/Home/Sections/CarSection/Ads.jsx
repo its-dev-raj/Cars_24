@@ -26,7 +26,7 @@ const Ads = () => {
           />
         </div>
       </div>
-      <div className="lg:flex px-4 lg:px-0 py-10 lg:py-12 select-none">
+      <div className="lg:flex  px-4 lg:px-0 py-10 lg:py-12 select-none">
         <Swiper
           cssMode={true}
           mousewheel={true}
