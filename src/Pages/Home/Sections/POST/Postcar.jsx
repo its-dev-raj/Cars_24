@@ -13,8 +13,8 @@ const Postcar = () => {
       totalKmDriven: "",
       price: "",
       fuelType: "",
-      images: [],
-      thumbnail: "", // Add thumbnail field
+      images: [], // For multiple images
+      thumbnail: null, // For single thumbnail file
       owners: "",
       location: "",
     },
@@ -48,27 +48,36 @@ const Postcar = () => {
       images: Yup.array()
         .of(Yup.string())
         .min(1, "At least one image is required"),
-      thumbnail: Yup.string().required("Thumbnail is required"), // Validate thumbnail
+      thumbnail: Yup.mixed().required("Thumbnail is required"), // Validate thumbnail file
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        const payload = {
-          name: values.name,
-          brand: values.brand,
-          model: values.model,
-          year: values.year,
-          totalKmDriven: values.totalKmDriven,
-          fuelType: values.fuelType,
-          owners: values.owners,
-          images: values.images,
-          thumbnail: values.thumbnail, // Include thumbnail in payload
-          location: values.location,
-          price: values.price,
-        };
+        const formData = new FormData(); // Use FormData for file uploads
 
+        // Append all fields to FormData
+        for (const key in values) {
+          if (key === "images") {
+            // Append each image file
+            values.images.forEach((image) => {
+              formData.append("images", image);
+            });
+          } else if (key === "thumbnail") {
+            // Append thumbnail file
+            formData.append("thumbnail", values.thumbnail);
+          } else {
+            formData.append(key, values[key]);
+          }
+        }
+
+        // Send POST request with FormData
         const response = await axios.post(
           "http://localhost:4000/api/v1/vehicle",
-          payload
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data", // Set content type for file upload
+            },
+          }
         );
 
         console.log("Response:", response.data);
@@ -81,16 +90,18 @@ const Postcar = () => {
     },
   });
 
+  // Handle multiple images upload
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
+    formik.setFieldValue("images", files); // Set files directly
+  };
 
-    // Set the first image as the thumbnail
-    if (files.length > 0) {
-      formik.setFieldValue("thumbnail", imageUrls[0]); // Set thumbnail
+  // Handle thumbnail upload
+  const handleThumbnailChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      formik.setFieldValue("thumbnail", file); // Set thumbnail file
     }
-
-    formik.setFieldValue("images", imageUrls); // Set all images
   };
 
   return (
@@ -336,7 +347,43 @@ const Postcar = () => {
           ) : null}
         </div>
 
-        {/* Images */}
+        {/* Thumbnail Upload */}
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="thumbnail"
+          >
+            Thumbnail
+          </label>
+          <input
+            type="file"
+            id="thumbnail"
+            name="thumbnail"
+            onChange={handleThumbnailChange}
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {formik.touched.thumbnail && formik.errors.thumbnail ? (
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.thumbnail}
+            </div>
+          ) : null}
+        </div>
+
+        {/* Thumbnail Preview */}
+        {formik.values.thumbnail && (
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Thumbnail Preview
+            </label>
+            <img
+              src={URL.createObjectURL(formik.values.thumbnail)}
+              alt="Thumbnail Preview"
+              className="w-20 h-20 object-cover rounded-lg"
+            />
+          </div>
+        )}
+
+        {/* Images Upload */}
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
@@ -369,26 +416,12 @@ const Postcar = () => {
               {formik.values.images.map((image, index) => (
                 <img
                   key={index}
-                  src={image}
+                  src={URL.createObjectURL(image)}
                   alt={`Preview ${index}`}
                   className="w-20 h-20 object-cover rounded-lg"
                 />
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Thumbnail Preview */}
-        {formik.values.thumbnail && (
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Thumbnail
-            </label>
-            <img
-              src={formik.values.thumbnail}
-              alt="Thumbnail Preview"
-              className="w-20 h-20 object-cover rounded-lg"
-            />
           </div>
         )}
 
